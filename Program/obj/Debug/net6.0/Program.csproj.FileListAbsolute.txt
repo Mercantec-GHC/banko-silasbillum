@@ -12,3 +12,17 @@ C:\Users\sila1400\Documents\GitHub\Program\Program\obj\Debug\net6.0\refint\Progr
 C:\Users\sila1400\Documents\GitHub\Program\Program\obj\Debug\net6.0\Program.pdb
 C:\Users\sila1400\Documents\GitHub\Program\Program\obj\Debug\net6.0\Program.genruntimeconfig.cache
 C:\Users\sila1400\Documents\GitHub\Program\Program\obj\Debug\net6.0\ref\Program.dll
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\bin\Debug\net6.0\Program.exe
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\bin\Debug\net6.0\Program.deps.json
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\bin\Debug\net6.0\Program.runtimeconfig.json
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\bin\Debug\net6.0\Program.dll
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\bin\Debug\net6.0\Program.pdb
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\Program.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\Program.AssemblyInfoInputs.cache
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\Program.AssemblyInfo.cs
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\Program.csproj.CoreCompileInputs.cache
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\Program.dll
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\refint\Program.dll
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\Program.pdb
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\Program.genruntimeconfig.cache
+C:\Users\sila1400\Documents\GitHub\banko-silasbillum\Program\obj\Debug\net6.0\ref\Program.dll

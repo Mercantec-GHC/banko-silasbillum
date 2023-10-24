@@ -1,34 +1,44 @@
 ﻿
 
-List<List<string>> Silas = new List<List<string>>();
+List<List<string>> List1 = new List<List<string>>();
+List<List<string>> List2 = new List<List<string>>();
+List<List<string>> List3 = new List<List<string>>();
 
-Silas.Add(new List<string> { "12", "23", "61", "70", "80" });
-Silas.Add(new List<string> { "16", "25", "35", "62", "72" });
-Silas.Add(new List<string> { "9", "36", "49", "58", "75" });
+List1.Add(new List<string> { "12", "23", "61", "70", "80" });
+List1.Add(new List<string> { "16", "25", "35", "62", "72" });
+List1.Add(new List<string> { "9", "36", "49", "58", "75" });
 
+List2.Add(new List<string> { "2", "21", "30", "74", "82" });
+List2.Add(new List<string> { "22", "32", "43", "56", "67" });
+List2.Add(new List<string> { "14", "28", "38", "77", "89" });
 
-Silas.Add(new List<string> { "2", "21", "30", "74", "82" });
-Silas.Add(new List<string> { "22", "32", "43", "56", "67" });
-Silas.Add(new List<string> { "14", "28", "38", "77", "89" });
+List3.Add(new List<string> { "21", "31", "44", "71", "80" });
+List3.Add(new List<string> { "8", "32", "47", "53", "64" });
+List3.Add(new List<string> { "9", "18", "37", "49", "88" });
 
-Silas.Add(new List<string> { "21", "31", "44", "71", "80" });
-Silas.Add(new List<string> { "8", "32", "47", "53", "64" });
-Silas.Add(new List<string> { "9", "18", "37", "49", "88" });
-
-
-
-foreach (var numbers in Silas)
+List<List<List<string>>> allLists = new List<List<List<string>>>
 {
-    
-    Console.WriteLine(string.Join(" ", numbers));
-    
+    List1,
+    List2,
+    List3
+};
+
+
+List<List<bool>> listsMatched = new List<List<bool>>();
+foreach (var bingoList in allLists)
+{
+    List<bool> matched = new List<bool>(bingoList.Count);
+    listsMatched.Add(matched);
 }
 
-List<bool> listsMatched = new List<bool>(Silas.Count);
-
-foreach (var list in Silas)
+for (int i = 0; i < allLists.Count; i++)
 {
-    listsMatched.Add(false);
+    Console.WriteLine($"Kort {i + 1}:");
+    foreach (var bingoList in allLists[i])
+    {
+        Console.WriteLine(string.Join(" ", bingoList));
+    }
+    Console.WriteLine();
 }
 
 int currentSet = 0;
@@ -39,23 +49,30 @@ while (true)
 {
     string trukket = Console.ReadLine() ?? "";
     bool found = false;
+    int listIndex = -1;
 
-    for (int i = 0; i < Silas.Count; i++)
+    for (int i = 0; i < allLists.Count; i++)
     {
-        if (Silas[i].Contains(trukket))
+        for (int j = 0; j < allLists[i].Count; j++)
         {
-            Console.WriteLine($"{trukket} er trukket på Række {i + 1} på card {currentSet + 1}");
-            Silas[i].Remove(trukket);
-
-            if (Silas[i].Count == 0 && !listsMatched[i])
+            if (allLists[i][j].Contains(trukket))
             {
-                listsCompletedInCurrentCard++;
-                listsMatched[i] = true;
-            }
+                Console.WriteLine($"{trukket} er trukket på Række {j + 1} på kort {currentSet + 1} i Liste {i + 1}");
+                allLists[i][j].Remove(trukket);
 
-            found = true;
-            break;
+                if (allLists[i][j].Count == 0 && !listsMatched[i][j])
+                {
+                    Console.WriteLine($"Sæt {currentSet + 1} er fuldstændigt trukket!");
+                    listsCompletedInCurrentCard++;
+                    listsMatched[i][j] = true;
+                }
+
+                found = true;
+                listIndex = i;
+                break;
+            }
         }
+        if (found) break;
     }
 
     if (!found)
@@ -63,22 +80,25 @@ while (true)
         Console.WriteLine($"{trukket} er ikke på pladen");
     }
 
-    if (listsCompletedInCurrentCard == 1)
+    if (listsCompletedInCurrentCard == allLists.Count)
     {
-        Console.WriteLine($"Første række færdig på sæt {currentSet / cardsPerSet + 1}");
-    }
-    else if (listsCompletedInCurrentCard == 2)
-    {
-        Console.WriteLine($"Anden række færdig på sæt {currentSet / cardsPerSet + 1}");
-    }
+        Console.WriteLine($"Sæt {currentSet + 1} er trukkethjj!");
 
-    if (listsMatched.All(matched => matched))
-    {
-        Console.WriteLine($"Sæt {currentSet + 1} er fuldstændigt trukket!");
-
-        if (currentSet % cardsPerSet == cardsPerSet - 1)
+        if (currentSet % cardsPerSet == 0)
         {
             Console.WriteLine("Alle rækker er fuldstændigt trukket!");
         }
+
+    }
+
+    if (listIndex >= 0 && listsMatched[listIndex].All(matched => matched))
+    {
+        Console.WriteLine($"Sæt {currentSet + 1} er fuldstændigt trukket!");
+    }
+
+    if (listsCompletedInCurrentCard == allLists.Count)
+    {
+        currentSet++;  
+        listsCompletedInCurrentCard = 0;  
     }
 }

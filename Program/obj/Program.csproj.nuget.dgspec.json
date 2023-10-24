@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sila1400\\Documents\\GitHub\\Program\\Program\\Program.csproj": {}
+    "C:\\Users\\sila1400\\Documents\\GitHub\\banko-silasbillum\\Program\\Program.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sila1400\\Documents\\GitHub\\Program\\Program\\Program.csproj": {
+    "C:\\Users\\sila1400\\Documents\\GitHub\\banko-silasbillum\\Program\\Program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sila1400\\Documents\\GitHub\\Program\\Program\\Program.csproj",
+        "projectUniqueName": "C:\\Users\\sila1400\\Documents\\GitHub\\banko-silasbillum\\Program\\Program.csproj",
         "projectName": "Program",
-        "projectPath": "C:\\Users\\sila1400\\Documents\\GitHub\\Program\\Program\\Program.csproj",
+        "projectPath": "C:\\Users\\sila1400\\Documents\\GitHub\\banko-silasbillum\\Program\\Program.csproj",
         "packagesPath": "C:\\Users\\sila1400\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sila1400\\Documents\\GitHub\\Program\\Program\\obj\\",
+        "outputPath": "C:\\Users\\sila1400\\Documents\\GitHub\\banko-silasbillum\\Program\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sila1400\\AppData\\Roaming\\NuGet\\NuGet.Config",
