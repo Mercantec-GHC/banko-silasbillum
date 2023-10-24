@@ -3,6 +3,8 @@
 List<List<string>> List1 = new List<List<string>>();
 List<List<string>> List2 = new List<List<string>>();
 List<List<string>> List3 = new List<List<string>>();
+List<List<string>> List4 = new List<List<string>>();
+List<List<string>> List5 = new List<List<string>>();
 
 List1.Add(new List<string> { "12", "23", "61", "70", "80" });
 List1.Add(new List<string> { "16", "25", "35", "62", "72" });
@@ -16,11 +18,22 @@ List3.Add(new List<string> { "21", "31", "44", "71", "80" });
 List3.Add(new List<string> { "8", "32", "47", "53", "64" });
 List3.Add(new List<string> { "9", "18", "37", "49", "88" });
 
+List4.Add(new List<string> { "30", "46", "62", "71", "83" });
+List4.Add(new List<string> { "23", "47", "52", "67", "73" });
+List4.Add(new List<string> { "8", "18", "25", "37", "48" });
+
+List5.Add(new List<string> { "1", "10", "61", "70", "80" });
+List5.Add(new List<string> { "24", "33", "41", "52", "76" });
+List5.Add(new List<string> { "29", "48", "56", "78", "83" });
+
 List<List<List<string>>> allLists = new List<List<List<string>>>
 {
     List1,
     List2,
-    List3
+    List3,
+    List4,
+    List5
+    
 };
 
 
