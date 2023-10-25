@@ -33,15 +33,15 @@ List<List<List<string>>> allLists = new List<List<List<string>>>
     List3,
     List4,
     List5
-    
+
 };
 
 
-List<List<bool>> listsMatched = new List<List<bool>>();
-foreach (var bingoList in allLists)
+bool[][] listsMatched = new bool[5][];
+for (int i = 0; i < allLists.Count(); i ++)
 {
-    List<bool> matched = new List<bool>(bingoList.Count);
-    listsMatched.Add(matched);
+    bool[] matched = new bool[3];
+    listsMatched[i] = matched;
 }
 
 for (int i = 0; i < allLists.Count; i++)
@@ -66,16 +66,18 @@ while (true)
 
     for (int i = 0; i < allLists.Count; i++)
     {
+        int fullyMatchedRowCount = 0;
+
         for (int j = 0; j < allLists[i].Count; j++)
         {
             if (allLists[i][j].Contains(trukket))
             {
-                Console.WriteLine($"{trukket} er trukket på Række {j + 1} på kort {currentSet + 1} i Liste {i + 1}");
+                Console.WriteLine($"{trukket} er trukket på Række {j + 1} på kort {i + 1}");
                 allLists[i][j].Remove(trukket);
 
                 if (allLists[i][j].Count == 0 && !listsMatched[i][j])
                 {
-                    Console.WriteLine($"Sæt {currentSet + 1} er fuldstændigt trukket!");
+                    Console.WriteLine($"Række {j + 1} er fuldstændigt trukket! på kort {i + 1}");
                     listsCompletedInCurrentCard++;
                     listsMatched[i][j] = true;
                 }
@@ -84,14 +86,26 @@ while (true)
                 listIndex = i;
                 break;
             }
+            if (listsMatched[i][j])
+            {
+                fullyMatchedRowCount++;
+            }
         }
-        if (found) break;
+         if (fullyMatchedRowCount == 2)
+        {
+            Console.WriteLine($"Kort {i + 1} har 2 rækker fuldstændigt trukket!");
+            Console.ReadLine();
+            
+        }
+
+        if (listIndex >= 0 && listsMatched[listIndex].All(matched => matched))
+        {
+            Console.WriteLine($"Kort {i + 1} er fuldstændigt trukket!");
+        }
+
     }
 
-    if (!found)
-    {
-        Console.WriteLine($"{trukket} er ikke på pladen");
-    }
+   
 
     if (listsCompletedInCurrentCard == allLists.Count)
     {
@@ -104,14 +118,15 @@ while (true)
 
     }
 
-    if (listIndex >= 0 && listsMatched[listIndex].All(matched => matched))
-    {
-        Console.WriteLine($"Sæt {currentSet + 1} er fuldstændigt trukket!");
-    }
+    
 
     if (listsCompletedInCurrentCard == allLists.Count)
     {
-        currentSet++;  
-        listsCompletedInCurrentCard = 0;  
+        currentSet++;
+        listsCompletedInCurrentCard = 0;
+    }
+    if (!found)
+    {
+        Console.WriteLine($"{trukket} er ikke på pladen");
     }
 }
