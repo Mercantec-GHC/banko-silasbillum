@@ -94,7 +94,7 @@ while (true)
          if (fullyMatchedRowCount == 2)
         {
             Console.WriteLine($"Kort {i + 1} har 2 rækker fuldstændigt trukket!");
-            Console.ReadLine();
+            
             
         }
 
