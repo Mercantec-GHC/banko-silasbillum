@@ -5,23 +5,23 @@ List<List<string>> List2 = new List<List<string>>();
 List<List<string>> List3 = new List<List<string>>();
 List<List<string>> List4 = new List<List<string>>();
 List<List<string>> List5 = new List<List<string>>();
-
+//silas Kort 1
 List1.Add(new List<string> { "12", "23", "61", "70", "80" });
 List1.Add(new List<string> { "16", "25", "35", "62", "72" });
 List1.Add(new List<string> { "9", "36", "49", "58", "75" });
-
-List2.Add(new List<string> { "2", "21", "30", "74", "82" });
-List2.Add(new List<string> { "22", "32", "43", "56", "67" });
-List2.Add(new List<string> { "14", "28", "38", "77", "89" });
-
-List3.Add(new List<string> { "21", "31", "44", "71", "80" });
-List3.Add(new List<string> { "8", "32", "47", "53", "64" });
-List3.Add(new List<string> { "9", "18", "37", "49", "88" });
-
-List4.Add(new List<string> { "30", "46", "62", "71", "83" });
-List4.Add(new List<string> { "23", "47", "52", "67", "73" });
-List4.Add(new List<string> { "8", "18", "25", "37", "48" });
-
+//Mikkelsen Kort 2
+List2.Add(new List<string> { "2", "21", "31", "52", "60" });
+List2.Add(new List<string> { "5", "17", "43", "54", "87" });
+List2.Add(new List<string> { "9", "57", "67", "75", "88" });
+//Tanja Kort 3
+List3.Add(new List<string> { "20", "30", "40", "62", "72" });
+List3.Add(new List<string> { "5", "16", "55", "65", "82" });
+List3.Add(new List<string> { "7", "17", "26", "38", "69" });
+//Asta Kort 4
+List4.Add(new List<string> { "1", "11", "20", "40", "55" });
+List4.Add(new List<string> { "21", "35", "48", "57", "84" });
+List4.Add(new List<string> { "13", "58", "66", "77", "87" });
+//Elias Kort 5
 List5.Add(new List<string> { "1", "10", "61", "70", "80" });
 List5.Add(new List<string> { "24", "33", "41", "52", "76" });
 List5.Add(new List<string> { "29", "48", "56", "78", "83" });
@@ -101,6 +101,7 @@ while (true)
         if (listIndex >= 0 && listsMatched[listIndex].All(matched => matched))
         {
             Console.WriteLine($"Kort {i + 1} er fuldstændigt trukket!");
+            break;
         }
 
     }
@@ -109,7 +110,7 @@ while (true)
 
     if (listsCompletedInCurrentCard == allLists.Count)
     {
-        Console.WriteLine($"Sæt {currentSet + 1} er trukkethjj!");
+        Console.WriteLine($"Sæt {currentSet + 1} er trukket!");
 
         if (currentSet % cardsPerSet == 0)
         {
@@ -120,11 +121,7 @@ while (true)
 
     
 
-    if (listsCompletedInCurrentCard == allLists.Count)
-    {
-        currentSet++;
-        listsCompletedInCurrentCard = 0;
-    }
+    
     if (!found)
     {
         Console.WriteLine($"{trukket} er ikke på pladen");
